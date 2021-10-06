@@ -1,5 +1,5 @@
-#Práctica 1: Conclusiones articulos 
-6 oct. 2021 -  Eduardo Da Silva Yanes
+# Práctica 1: Conclusiones articulos 
+6 oct. 2021 - PE102 - Eduardo Da Silva Yanes
 
 ## Data Modeling Takes Practice, Practice, Practice
 
