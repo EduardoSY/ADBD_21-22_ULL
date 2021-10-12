@@ -3,13 +3,12 @@
 
 El agua es una necesidad básica para todas las personas pero el acceso a la misma es un gran problema para muchos millones. Es por esto que muchas empresas y organizaciones dedicadas al desarrollo, financiación, gestión e implementación de proyectos relacionados con el abastecimiento y saneamiento.
 
-Entonces el problema que se plantea es cómo dar suministro de agua potable y apta para el consumo en zonas donde hasta ahora no ha sido posible. 
+Entonces el problema que se plantea es cómo dar suministro de agua potable y apta para el consumo en zonas donde hasta ahora no ha sido posible. Para dar una solución viable a esta difícil situación es necesario analizar diversos aspectos. A continuación se darán a conocer algunos de ellos.
 
-A la hora de proponer soluciones se deben analizar diversos aspectos. Algunos de ellos son citados a continuación.
+Respecto a lo que infraestructura, emplazamiento y logística se refiere es necesario analizar factores como el terreno, la viabilidad de construcción en el mismo y la situación ambiental del entorno. Algo vital para el proyecto es analizar qué fuentes de agua, qué calidad poseen las mismas y de qué manera pueden ser explotadas para que su aprovechamiento sea sostenible.
 
-Respecto a la infraestructura del proyecto es necesario examinar diversos factores como el terreno, la viabilidad de la construcción en el mismo, analizar qué fuentes de aguas hay disponibles y qué calidad tienen, es decir, analizar si son potables y si son sostenibles.
-A su vez también hay que valorar cómo es el mantenimiento y la explotación de la instalación.
+Además de esto, es importante valorar la propuesta en cuanto al mantenimiento y viabilidad de explotación de la instalación, es decir, qué materiales y equipamiento pueden y deben ser usados en el proyecto.
 
-Por otro lado hay que analizar el aspecto socio-económico del entorno como por ejemplo la participación local, la voluntad de pago de los usuarios y el impacto a largo plazo de la infraestructura, costes de implantación y mantenimiento.
+Por otro lado hay que analizar el aspecto socio-económico del lugar. Se ha de valorar qué impacto tendría y cómo será la gestión a posteriori puesto que, en caso de no ser administrado correctamente puede ocasionar diversos problemas. Así mismo es importante analizar la participación local, la voluntad de pago de los usuarios y el impacto a largo plazo del proyecto, en relación a la infraestructura, costes de implementación, mantenimiento, etc.
 
-Al documento original se anexa una serie de posibles soluciones que han sido previamente ejecutadas, dando una breve descripción del diseño y funcionamiento. Esto proporciona una importante batería de información muy relevante para
+Al documento original se anexa una serie de posibles soluciones que han sido previamente ejecutadas, dando una breve descripción del diseño y funcionamiento. Esto proporciona una importante batería de información muy relevante basada en experiencias previas de tal manera que la decisión pueda ser tomada con datos lo más acordes a la realidad posible.
