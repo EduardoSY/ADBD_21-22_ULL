@@ -5,9 +5,9 @@
 
 Aunque haya personas que piensen que el diseño de base de datos es algo trivial, donde el trabajo de un administrador es algo mecánico y preestablecido, la verdad es que va mucho más allá.
 
-Realizar un planteamiento correcto del trabajo debe ser algo primordial para el administrador, no solo por el hecho de tener un mejor trabajo sino que también le permite ahorrarse mucho trabajo extra para corregir errores que por prisa o por simple imprudencia ocurren. En ciertas ocasiones es preferible pasar un par de días verificando que todo nuestro trabajo es correcto que pasar una semana posteriormente arreglando aquellas erratas que hemos cometido.
+Realizar un planteamiento correcto del trabajo debe ser algo primordial para el administrador, no solo por el hecho de realizar un mejor trabajo sino que también le permite ahorrarse mucho trabajo extra para corregir errores que, por prisa o por simple imprudencia, ocurren. En ciertas ocasiones es preferible pasar un par de días verificando que todo nuestro trabajo es correcto que pasar una semana posteriormente arreglando aquellas erratas que hemos cometido.
 
-Todo esto no es un proceso sencillo, requiere de tiempo y mucha práctica.
+Esto no es un proceso sencillo ni hay ningún tipo de manual con la clave para lograrlo. Este perfeccionamiento se consigue con práctica, experiencia, enfrentándonos a diversas situaciones que nos hagan aprender 
 
 ## Improving Communication Between Data Modelers and Enterprise Stakeholders
 
