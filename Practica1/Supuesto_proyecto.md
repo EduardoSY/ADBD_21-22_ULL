@@ -11,6 +11,6 @@ Además de esto, es importante valorar la propuesta en cuanto al mantenimiento y
 
 Por otro lado hay que analizar el aspecto socio-económico del lugar. Se ha de valorar qué impacto tendría y cómo será la gestión a posteriori puesto que, en caso de no ser administrado correctamente puede ocasionar diversos problemas. Así mismo es importante analizar la participación local, la voluntad de pago de los usuarios y el impacto a largo plazo del proyecto, en relación a la infraestructura, costes de implementación, mantenimiento, etc.
 
-Todo esto se debe hacer en función, como es lógico, al número de usuarios a los que se debe abastecer de agua potable.
+Todo esto se debe hacer en función, como es lógico, al número de usuarios a los que se debe abastecer de agua (potable y saneamiento).
 
 Al documento original se anexa una serie de posibles soluciones que han sido previamente ejecutadas, dando una breve descripción del diseño y funcionamiento. Esto proporciona una importante batería de información muy relevante basada en experiencias previas de tal manera que la decisión pueda ser tomada con datos lo más acordes a la realidad posible.
