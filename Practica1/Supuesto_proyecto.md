@@ -1,7 +1,7 @@
 # Práctica 1: Presentación Supuesto Proyecto de Bases de Datos
 06 oct. 2021 - PE102 - Eduardo Da Silva Yanes
 
-El agua es una necesidad básica para todas las personas pero el acceso a la misma es un gran problema para muchos millones. Es por esto que muchas empresas y organizaciones dedicadas al desarrollo, financiación, gestión e implementación de proyectos relacionados con el abastecimiento y saneamiento.
+El agua es una necesidad básica para todas las personas pero el acceso a la misma es un gran problema para muchos millones. Es por esto que muchas empresas y organizaciones están dedicadas al desarrollo, financiación, gestión e implementación de proyectos relacionados con el abastecimiento y saneamiento.
 
 Entonces el problema que se plantea es cómo dar suministro de agua potable y apta para el consumo en zonas donde hasta ahora no ha sido posible. Para dar una solución viable a esta difícil situación es necesario analizar diversos aspectos. A continuación se darán a conocer algunos de ellos.
 
