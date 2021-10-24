@@ -1,0 +1,122 @@
+Script started on 2021-10-24 12:01:25+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="49"]
+]0;usuario@ubuntu: ~[01;32musuario@ubuntu[00m:[01;34m~[00m$ sudo su postgres
+[sudo] password for usuario: 
+postgres@ubuntu:/home/usuario$ psql -u postgres
+/usr/lib/postgresql/12/bin/psql: invalid option -- 'u'
+Try "psql --help" for more information.
+postgres@ubuntu:/home/usuario$ psql -u postgres[1P postgresU postgres
+psql (12.8 (Ubuntu 12.8-0ubuntu0.20.04.1))
+Type "help" for help.
+
+postgres=# CREATE USER usertest;
+CREATE ROLE
+postgres=# ALTER ROLA usertest WITH PASSWORD 'usertest';[1P[1@e[1P[1@E
+ALTER ROLE
+postgres=# \du
+[?1049h[22;0;0t[?1h=                                   List of roles
+ Role name |                         Attributes                         | Member  of 
+-----------+------------------------------------------------------------+------- ----
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ usertest  |                                                            | {}
+
+[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[?1l>[?1049l[23;0;0tpostgres=# 
+postgres=# CREATE DATABASE p2[K[Kp1test[1Ptest2test[C[C[C[C[K[K[K[Kdb
+postgres-# \l
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+-----------+----------+----------+---------+---------+-----------------------
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(3 rows)
+
+postgres-# \lCREATE DATABASE p2db;
+ERROR:  syntax error at or near "CREATE"
+LINE 2: CREATE DATABASE p2db;
+        ^
+postgres=# 
+postgres=# 
+postgres=# 
+postgres=# CREATE DATABASE p2db;
+CREATE DATABASE
+postgres=# CREATE DATABASE p2db;[C[C[C[C[C[C[C[C[C[C[C\l[K
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+-----------+----------+----------+---------+---------+-----------------------
+ p2db      | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \lCREATE DATABASE p2db;[C[1P[1P[1P[1P[1P[1P[1@D[1@R[1@O[1@P
+DROP DATABASE
+postgres=# DROP DATABASE p2db;[C[C[C[C[C[C[C[C[C[C[C\l[K
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+-----------+----------+----------+---------+---------+-----------------------
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(3 rows)
+
+postgres=# \lDROP DATABASE p2db;[C[C[C[C[C[C[C[C[C[C[C\l[KCREATE DATABASE p2db;[1P;[1P;[1P;[1P;p;r;a;c;t;1;
+CREATE DATABASE
+postgres=# CREATE DATABASE pract1;[C[C[C[C[C[C[C[C[C[C[C\l[K
+                              List of databases
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+-----------+----------+----------+---------+---------+-----------------------
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ pract1    | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c pract1
+You are now connected to database "pract1" as user "postgres".
+pract1=# CREATE TABLE usuarios (
+pract1(# nombre varchar(30),
+pract1(# clave varchar [K(10));
+CREATE TABLE
+pract1=# INSERT INTO usuarios([K (nombre,clave) VALUES ('ISA[K[Ksa', 'asdf');
+INSERT 0 1
+pract1=# INSERT INTO usuarios (nombre,clave) VALUES ('Isa', 'asdf');[1P[1P[1P[1@P[1@a[1@b[1@l[1@o[C[C[C[C[C[C[C[C[C[1P');[1P');[1P');[1P');j');f');x');3');4');4');
+INSERT 0 1
+pract1=# INSERT INTO usuarios (nombre,clave) VALUES ('Pablo', 'jfx344');[C[C[1P[1P[1P[1P[1P[1@A[1@n[1@a[C[C[C[C[C[C[C[C[C[C[1P');[1P');[1P');[1P');[1P');[1P');t');r');u');3');f');a');l');
+INSERT 0 1
+pract1=# \dt
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | usuarios | table | postgres
+(1 row)
+
+pract1=# SELECT * FROM usuarios
+pract1-# ;
+ nombre |  clave  
+--------+---------
+ Isa    | asdf
+ Pablo  | jfx344
+ Ana    | tru3fal
+(3 rows)
+
+pract1=# exit
+postgres@ubuntu:/home/usuario$ exit
+exit
+]0;usuario@ubuntu: ~[01;32musuario@ubuntu[00m:[01;34m~[00m$ script[K[K[K[K[K[Kscript
+Script started, file is typescript
+]0;usuario@ubuntu: ~[01;32musuario@ubuntu[00m:[01;34m~[00m$ exit[K[K[K[Kexit
+exit
+Script done, file is typescript
+]0;usuario@ubuntu: ~[01;32musuario@ubuntu[00m:[01;34m~[00m$ exit
+exit
+
+Script done on 2021-10-24 12:37:19+00:00 [COMMAND_EXIT_CODE="0"]
