@@ -14,7 +14,7 @@ $ sudo su postgres
 ```
 Una vez estemos dentro veremos una pantalla como la siguiente:
 
-IMAGEN
+![Imagen1](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica2/img/img1.png)
 
 Vamos a crear un usuario
 
@@ -28,9 +28,14 @@ El usuario recien creado no posee contraseña. Si queremos asignarle una contras
 ALTER ROLE usuario WITH PASSWORD 'password';
 ~~~~
 
+![Imagen2](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica2/img/img2.png)
+
 En mi caso el usuario se llama **usuariotest** y
 Con esto ya le habríamos establecido la contraseña.
 Para listar cuántos usuarios usamos ``` \du ```.
+
+![Imagen3](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica2/img/img3.png)
+
 
 Una vez hemos hecho todo esto podemos pasar a crear la base de datos de prueba.
 
@@ -39,6 +44,8 @@ Para crear una nueva usamos la sentencia
 CREATE DATABASE pract1;
 ~~~~
 Para comprobar que se ha creado podemos listar las bases de datos existentes en el sistema y buscar la nuestra. Esto lo hacemos con ``` \l ```.
+
+![Imagen4](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica2/img/img4.png)
 
 
 Dentro de esta db vamos a crear una tabla. Para ello lo primero es acceder/conectarnos con la db con la que queremos trabajar. 
@@ -63,9 +70,15 @@ CREATE TABLE usuarios (
  );
 ~~~~
 
+![Imagen5](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica2/img/img5.png)
+
+
 Finalmente vamos a rellenar esta tabla recien creada con distintas tuplas. 
 ~~~~sql
 INSERT INTO usuarios (nombre, clave) VALUES ('Isa','asdf');
 INSERT INTO usuarios (nombre, clave) VALUES ('Pablo','jfx344');
 INSERT INTO usuarios (nombre, clave) VALUES ('Ana','tru3fal');
 ~~~~
+
+
+![Imagen6](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica2/img/img6.png)
