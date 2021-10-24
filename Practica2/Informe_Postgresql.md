@@ -42,7 +42,8 @@ ALTER ROLE usuario WITH PASSWORD 'password';
 
 ![Imagen2](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica2/img/img2.png)
 
-En mi caso el usuario se llama **usuariotest** y
+En mi caso el usuario se llama **usuariotest** y la contraseña es su propio nombre.
+
 Con esto ya le habríamos establecido la contraseña.
 
 También podríamos hacer ambos pasos con una única sentencia como la siguiente:
