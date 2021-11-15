@@ -78,3 +78,14 @@ $$ LANGUAGE 'plpgsql';
 CREATE TRIGGER compra_insert_trigger AFTER INSERT ON viverosdb.COMPRA
 FOR EACH ROW EXECUTE PROCEDURE compra_insert_trigger_fnc();
 ```
+---
+
+### IMAGENES DEL RESULTADO
+
+**1. Ejecución del fichero SQL**
+
+![Ejecución](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica4/Ejecuci%C3%B3n_fichero.png)
+
+**2. SELECTS de las tablas**
+
+![SELECTS](https://github.com/EduardoSY/ADBD_21-22_ULL/blob/main/Practica4/SELECTS.png)
