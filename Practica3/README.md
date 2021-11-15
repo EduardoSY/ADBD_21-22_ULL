@@ -1,5 +1,10 @@
 ## Práctica 3
 
+ Esta práctica ha sido realizada en conjunto por:
+ - EDUARDO DA SILVA YANES => alu0101104911
+ - ALEJANDRO MEDINA GARCÍA => alu0100905885
+ - CRISTO MANUEL PÉREZ RODRÍGUEZ => alu0101218007
+
 En esta tercera práctica debemos implementar el modelo lógico-relacional a partir del modelo comceptual de la empresa de viveros. En nuestro caso hemos usado como referencia el modelo proporcionado por los profesores de la asignatura.
 
 ### Entregas de la práctica
