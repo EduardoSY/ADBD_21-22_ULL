@@ -1,24 +1,20 @@
 <?php
-
+// Credenciales y conectar con la db
 $user = "app_user";
 $password = "4ppUs3.r";
 $database = "app_web_adbd";
-//Etapa1. Crear la variable $db y asignar a la cadena de conexión
 $db = mysqli_connect("localhost", $user, $password, $database) or die('Error al conectar al servidor MySQL.');
 
-// For extra protection these are the columns of which the user can sort by (in your database table).
 $columns = array('ID','nombre','familia', 'descripcion', 'stock', 'size', 'precio', 'peso');
 
+// Cadenas para hacer la consulta ordenada
 $action = '';    
 $where = '';
 
 if(isset($_GET["column"]))
 {
-    
-     $column = $_GET["column"];   //geting id value which we are passing from table headers
-     $action = $_GET["action"]; // geting action value which we are passing from table headers
-    
-    //we are checking condition if $action value is ASC then $action will set to DESC otherwise it will remain ASC
+     $column = $_GET["column"];
+     $action = $_GET["action"]; 
     if($action == 'ASC')
      { 
         $action='DESC';
@@ -30,13 +26,8 @@ if(isset($_GET["column"]))
         $where = " ORDER BY  $column $action ";
     }
 
-
-// Get the result...
+// Resultado de la consulta
 if ($result = $db->query('SELECT * FROM PRODUCTOS ' . $where)) {
-  // Some variables we need for the table.
-  $up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order);
-  $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
-  $add_class = ' class="highlight"';
 ?>
 <!DOCTYPE html>
   <html>
@@ -45,13 +36,12 @@ if ($result = $db->query('SELECT * FROM PRODUCTOS ' . $where)) {
     <title>ADBD P6 - PRODUCTOS</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="index.css">
-    <!--<link rel="icon" href="./assets/images/image.png" type="image/x-icon">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
   </head>
-
+  
+  <!-- BODY -->
   <body style="margin: 10px;padding:0;">
     <div class="header">
       <h1>SECCION DE PRODUCTOS</h1>
@@ -85,8 +75,8 @@ if ($result = $db->query('SELECT * FROM PRODUCTOS ' . $where)) {
         </tr>
       </thead>
       <tbody>
+      <!-- Insertar los productos en la tabla -->
       <?php while ($row = $result->fetch_assoc()) : ?>
-        
           <tr>
             <td<?php echo $column == 'ID' ? $add_class : ''; ?>><?php echo $row['ID']; ?></td>
             <td<?php echo $column == 'Imagen' ? $add_class : ''; ?>><img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']); ?>" /></td>
@@ -101,8 +91,6 @@ if ($result = $db->query('SELECT * FROM PRODUCTOS ' . $where)) {
             <td style="text-align: center;"><a href="./pages/productos/edit_productos.php?id=<?php echo $row['ID']; ?>"><i class="material-icons">edit</i></a></td>
             <td style="text-align: center;"><a href="./pages/productos/delete.php?id=<?php echo $row['ID']; ?>"><i class="material-icons">delete_forever</i></a></td>
           </tr>
-
-        
         <?php endwhile; ?>
         <tbody>
     </table>
@@ -112,7 +100,6 @@ if ($result = $db->query('SELECT * FROM PRODUCTOS ' . $where)) {
 <?php
   $result->free();
 }
-
-//Etapa 4. Cierre conexión
+// Cerrar conexion
 mysqli_close($db);
 ?>
