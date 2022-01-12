@@ -3,7 +3,6 @@
 $user = "app_user";
 $password = "4ppUs3.r";
 $database = "app_web_adbd";
-//Etapa1. Crear la variable $db y asignar a la cadena de conexión
 $db = mysqli_connect("localhost", $user, $password, $database) or die('Error al conectar al servidor MySQL.');
 $url_email = $_GET['email'];
 $result = $db->query("SELECT * FROM `CLIENTES` WHERE email='$url_email'");
@@ -21,17 +20,17 @@ $row = $result->fetch_assoc();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <style type="text/css">
-  label{
-    width:100px;
-    display: inline-block;
-  }
+    label{
+      width:100px;
+      display: inline-block;
+    }
 
-  #form{
-    border-radius: 10px;
-    width:290px;
-    padding:4px;
-  }
-</style>
+    #form{
+      border-radius: 10px;
+      width:290px;
+      padding:4px;
+    }
+  </style>
 </head>
 
 <body style="margin: 10px; padding:0;">

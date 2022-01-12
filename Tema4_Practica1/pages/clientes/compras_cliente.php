@@ -1,9 +1,7 @@
 <?php
-
 $user = "app_user";
 $password = "4ppUs3.r";
 $database = "app_web_adbd";
-//Etapa1. Crear la variable $db y asignar a la cadena de conexión
 $db = mysqli_connect("localhost", $user, $password, $database) or die('Error al conectar al servidor MySQL.');
 $url_email = $_GET['email'];
 $result = $db->query("SELECT * FROM `COMPRAS` WHERE email='$url_email'");

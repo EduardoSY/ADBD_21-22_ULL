@@ -1,9 +1,7 @@
 <?php
-
 $user = "app_user";
 $password = "4ppUs3.r";
 $database = "app_web_adbd";
-//Etapa1. Crear la variable $db y asignar a la cadena de conexión
 $db = mysqli_connect("localhost", $user, $password, $database) or die('Error al conectar al servidor MySQL.');
 $url_id = $_GET['id'];
 $result = $db->query("SELECT * FROM `PRODUCTOS` WHERE id='$url_id'");
@@ -21,17 +19,17 @@ $row = $result->fetch_assoc();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <style type="text/css">
-  label{
-    width:150px;
-    display: inline-block;
-  }
+    label{
+      width:150px;
+      display: inline-block;
+    }
 
-  #form{
-    border-radius: 10px;
-    width:290px;
-    padding:4px;
-  }
-</style>
+    #form{
+      border-radius: 10px;
+      width:290px;
+      padding:4px;
+    }
+  </style>
 </head>
 
 <body style="margin: 10px; padding:0;">
@@ -54,10 +52,10 @@ $row = $result->fetch_assoc();
       <select name="select_clientes" required>
         <option value="" disable>Seleccione:</option>
         <?php
-// Realizamos la consulta para extraer los datos
+        // Realizamos la consulta para extraer los datos
           $query = $db -> query ("SELECT * FROM CLIENTES");
           while ($valores = mysqli_fetch_array($query)) {
-// En esta sección estamos llenando el select con datos extraidos de una base de datos.
+        // En esta sección estamos llenando el select con datos extraidos de una base de datos.
             echo '<option value="'.$valores[email].'">'.$valores[nombre].' '.$valores[apellido].'</option>';
           }
         ?>

@@ -3,24 +3,32 @@
 $user = "app_user";
 $password = "4ppUs3.r";
 $database = "app_web_adbd";
-//Etapa1. Crear la variable $db y asignar a la cadena de conexión
 $db = mysqli_connect("localhost", $user, $password, $database) or die('Error al conectar al servidor MySQL.');
 
-// For extra protection these are the columns of which the user can sort by (in your database table).
 $columns = array('email','DNI','CP', 'tlfno', 'nombre', 'apellido');
 
-// Only get the column if it exists in the above columns array, if it doesn't exist the database table will be sorted by the first item in the columns array.
-$column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
+// Cadenas para hacer la consulta ordenada
+$action = '';    
+$where = '';
 
-// Get the sort order for the column, ascending or descending, default is ascending.
-$sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
+if(isset($_GET["column"]))
+{
+    
+     $column = $_GET["column"];
+     $action = $_GET["action"]; 
+    
+    if($action == 'ASC')
+     { 
+        $action='DESC';
+     }
+     else  
+     { 
+        $action='ASC';
+     }
+        $where = " ORDER BY  $column $action ";
+    }
 
-// Get the result...
-if ($result = $db->query('SELECT * FROM CLIENTES ORDER BY ' .  $column . ' ' . $sort_order)) {
-  // Some variables we need for the table.
-  $up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order);
-  $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
-  $add_class = ' class="highlight"';
+if ($result = $db->query('SELECT * FROM CLIENTES  ' . $where)) {
 ?>
 <!DOCTYPE html>
   <html>
@@ -29,9 +37,9 @@ if ($result = $db->query('SELECT * FROM CLIENTES ORDER BY ' .  $column . ' ' . $
     <title>ADBD P6 - CLIENTES</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="index.css">
-    <!--<link rel="icon" href="./assets/images/image.png" type="image/x-icon">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
   </head>
 
@@ -52,11 +60,12 @@ if ($result = $db->query('SELECT * FROM CLIENTES ORDER BY ' .  $column . ' ' . $
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Email</th>
+          <!-- email, DNI, CP, tlfno, nombre, apellido -->
+          <th><a style="color: black;" href="clientes.php?column=<?php echo 'email';?>&action=<?php echo $action;?>">Email<i class="fa fa-fw fa-sort"></i></a></th>
           <th>DNI</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Telefono</th>
+          <th><a style="color: black;" href="clientes.php?column=<?php echo 'nombre';?>&action=<?php echo $action;?>">Nombre<i class="fa fa-fw fa-sort"></i></a></th>
+          <th><a style="color: black;" href="clientes.php?column=<?php echo 'apellido';?>&action=<?php echo $action;?>">Apellido<i class="fa fa-fw fa-sort"></i></a></th>
+          <th><a style="color: black;" href="clientes.php?column=<?php echo 'tlfno';?>&action=<?php echo $action;?>">Telefono<i class="fa fa-fw fa-sort"></i></a></th>
           <th>Codigo Postal</th>
           <th style="text-align: center;">Compras</th>
           <th style="text-align: center;">Editar</th>
@@ -89,6 +98,6 @@ if ($result = $db->query('SELECT * FROM CLIENTES ORDER BY ' .  $column . ' ' . $
   $result->free();
 }
 
-//Etapa 4. Cierre conexión
+//Cierre conexión
 mysqli_close($db);
 ?>

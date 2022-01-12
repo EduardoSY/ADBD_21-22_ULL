@@ -1,26 +1,10 @@
 <?php
-
 $user = "app_user";
 $password = "4ppUs3.r";
 $database = "app_web_adbd";
-//Etapa1. Crear la variable $db y asignar a la cadena de conexión
 $db = mysqli_connect("localhost", $user, $password, $database) or die('Error al conectar al servidor MySQL.');
 
-// For extra protection these are the columns of which the user can sort by (in your database table).
-$columns = array('email','DNI','CP', 'tlfno', 'nombre', 'apellido');
-
-// Only get the column if it exists in the above columns array, if it doesn't exist the database table will be sorted by the first item in the columns array.
-$column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
-
-// Get the sort order for the column, ascending or descending, default is ascending.
-$sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
-
-// Get the result...
-if ($result = $db->query('SELECT * FROM COMPRAS ORDER BY ' .  $column . ' ' . $sort_order)) {
-  // Some variables we need for the table.
-  $up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order);
-  $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
-  $add_class = ' class="highlight"';
+if ($result = $db->query('SELECT * FROM COMPRAS')) {
 ?>
 <!DOCTYPE html>
   <html>
@@ -29,7 +13,6 @@ if ($result = $db->query('SELECT * FROM COMPRAS ORDER BY ' .  $column . ' ' . $s
     <title>ADBD P6 - COMPRAS</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="index.css">
-    <!--<link rel="icon" href="./assets/images/image.png" type="image/x-icon">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -79,7 +62,5 @@ if ($result = $db->query('SELECT * FROM COMPRAS ORDER BY ' .  $column . ' ' . $s
 <?php
   $result->free();
 }
-
-//Etapa 4. Cierre conexión
 mysqli_close($db);
 ?>

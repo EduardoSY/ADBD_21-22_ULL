@@ -1,26 +1,23 @@
 <?php
+// Credenciales y conexion 
 $user = "app_user";
 $password = "4ppUs3.r";
 $database = "app_web_adbd";
-//Etapa1. Crear la variable $db y asignar a la cadena de conexión
 $db = mysqli_connect("localhost", $user, $password, $database) or die('Error al conectar al servidor MySQL.');
 if(isset($_POST['submit']))
 {    
-
-
   $email = $_POST['email'];
   $DNI = $_POST['DNI'];
   $nombre = $_POST['nombre'];
   $apellido = $_POST['apellido'];
   $tlfno = $_POST['tlfno'];
   $CP = $_POST['CP'];
-  //email, dni cp tlfno, nombre apellido
+  
+  // Sentencia a insertar en db
   $sql = "INSERT INTO CLIENTES (email, DNI, CP, tlfno, nombre, apellido) VALUES ('$email','$DNI','$CP', '$tlfno', '$nombre', '$apellido')";
-  // $sqltest = "INSERT INTO `CLIENTES` (`email`, `DNI`, `CP`, `tlfno`, `nombre`, `apellido`) VALUES ('pacotest@gmail.com', '39871554Y', '38111', 933961861 , 'Pacotest', 'Goomez')";
   if ($db->query($sql) === TRUE) {
-    //echo "New record has been added successfully !";
     echo'<script type="text/javascript">
-    alert("Tarea Guardada");
+    alert("Nuevo cliente guardado exitosamente");
     window.location.href="clientes.php";
     </script>';
   } else {

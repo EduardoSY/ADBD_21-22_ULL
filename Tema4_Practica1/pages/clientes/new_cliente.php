@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>ADBD P6 - CLIENTES</title>
   <meta charset="utf-8">
@@ -9,17 +8,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <style type="text/css">
-  label{
-    width:100px;
-    display: inline-block;
-  }
+    label{
+      width:100px;
+      display: inline-block;
+    }
 
-  #form{
-    border-radius: 10px;
-    width:290px;
-    padding:4px;
-  }
-</style>
+    #form{
+      border-radius: 10px;
+      width:290px;
+      padding:4px;
+    }
+  </style>
 </head>
 
 <body style="margin: 10px; padding:0;">
@@ -27,6 +26,7 @@
     <h2>Añadir cliente</h2>
   </div>
   <hr>
+  <!-- Formulario para nuevo cliente -->
   <form action="insert.php" method="post">
     <div class="form-group">
       <label>Email*</label>
